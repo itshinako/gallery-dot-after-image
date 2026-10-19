@@ -1,7 +1,7 @@
 // 公開前に設定してください。未設定のリンクは遷移せず、GAS未設定時はデモモードになります。
 window.CONFIG={
   SITE_URL:"", INSTAGRAM_URL:"", LINE_URL:"", X_URL:"",
-  GAS_WEB_APP_URL:"",   // GASデプロイURL（空欄＝デモモード）
+  GAS_WEB_APP_URL:"https://script.google.com/macros/s/AKfycbzG7epOE3D3mw7_YJZh4lSNd7o2C4bKmXWmJSfzYyptjtH_z_SFo_Gbb-eGwE4kvXd2/exec",   // GASデプロイURL（空欄＝デモモード）
   GA_ID:"",             // GA4測定ID
   FEE_TEXT:"入場無料",
   MAX_COMPANIONS:2,     // 同伴者は最大2名（予約者と合計3名）。GAS側の上限も2に設定

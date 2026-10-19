@@ -11,7 +11,7 @@ p{margin:0 0 1em}.sm{font-size:.9rem;color:var(--sub)}.sub{font-size:1.15rem}
 .big{font-size:clamp(3rem,13vw,8rem);line-height:1}
 :focus-visible{outline:3px solid var(--aq);outline-offset:3px}
 /* buttons */
-.btn{display:flex;align-items:center;justify-content:center;gap:.6em;min-height:56px;padding:0 28px;border-radius:999px;font:700 16px var(--f);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:box-shadow .3s,transform .15s,background .3s;margin:0 0 12px;width:100%}
+.btn{display:flex;align-items:center;justify-content:center;gap:.6em;min-height:56px;padding:0 28px;border-radius:999px;font:700 16px var(--f);text-decoration:none;border:1px solid transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:box-shadow .3s,transform .15s,background .3s;margin:0 0 12px;width:100%}
 .btn span{transition:transform .3s}.btn:hover span{transform:translateX(5px)}
 .btn-p{background:var(--mag);color:var(--near)}.btn-p:hover{box-shadow:0 0 28px 4px rgba(227,79,112,.55)}
 .btn-s{border-color:rgba(247,247,248,.5);background:transparent;color:var(--mist)}.btn-s:hover{background:rgba(247,247,248,.1)}

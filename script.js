@@ -89,13 +89,14 @@ for(let i=0;i<=(C.MAX_COMPANIONS??2);i++)N.insertAdjacentHTML('beforeend',`<opti
 D.addEventListener('change',()=>{$$('option',T).forEach(o=>{o.disabled=false;o.textContent=o.textContent.replace(' 満席','')});
  if(C.GAS_WEB_APP_URL&&D.value)fetch(C.GAS_WEB_APP_URL+'?action=slots&date='+D.value).then(r=>r.json()).then(j=>(j.full||[]).forEach(t=>{const o=$(`option[value="${t}"]`,T);if(o){o.disabled=true;o.textContent+=' 満席'}})).catch(()=>{})});
 let started=0;f.addEventListener('focusin',()=>{if(!started){started=1;track('reservation_start')}});
+let submitted=false;
 const E={name:'お名前を入力してください。',email:'正しいメールアドレスを入力してください。',phone:'電話番号を入力してください。',date:'来場日を選択してください。',time:'来場時間を選択してください。',privacy:'利用規約への同意が必要です。'};
-const setErr=(k,m)=>{const el=f.elements[k];if(!el)return;const b=el.closest('label')||el.parentNode;$('.err',b).textContent=m||'';el.setAttribute('aria-invalid',!!m)};
-const val=()=>{let first=null;const v=k=>f.elements[k].value.trim();
- const bad={name:!v('name'),email:!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email')),phone:!/^[0-9+\-() ]{9,20}$/.test(v('phone')),date:!v('date'),time:!v('time'),privacy:!f.elements.privacy.checked};
- for(const k in bad){setErr(k,bad[k]?E[k]:'');if(bad[k]&&!first)first=f.elements[k]}
- if(first){first.focus();track('reservation_validation_error')}return!first};
-f.addEventListener('submit',async e=>{e.preventDefault();msg.textContent='';if(!val())return;
+const setErr=(k,m)=>{const el=f.elements[k];if(!el)return;const b=el.closest('label')||el.parentNode,error=$('.err',b);error.textContent=m||'';error.setAttribute('aria-live','polite');el.setAttribute('aria-invalid',!!m)};
+const validateField=k=>{const v=f.elements[k].value.trim(),bad={name:!v,email:!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.elements.email.value.trim()),phone:!/^[0-9+\-() ]{9,20}$/.test(f.elements.phone.value.trim()),date:!f.elements.date.value,time:!f.elements.time.value,privacy:!f.elements.privacy.checked};setErr(k,bad[k]?E[k]:'');return!bad[k]};
+const val=()=>{const invalid=Object.keys(E).filter(k=>!validateField(k));if(invalid.length){f.elements[invalid[0]].focus();track('reservation_validation_error')}return!invalid.length};
+const refreshError=e=>{if(submitted&&E[e.target.name])validateField(e.target.name)};
+f.addEventListener('input',refreshError);f.addEventListener('change',refreshError);
+f.addEventListener('submit',async e=>{e.preventDefault();submitted=true;msg.textContent='';if(!val())return;
  if(!C.GAS_WEB_APP_URL){msg.textContent='デモモードのため送信されません（予約は確定していません）。config.js の GAS_WEB_APP_URL を設定してください。';return}
  sub.disabled=true;sub.firstChild.textContent='送信中… ';
  const b={action:'reserve',name:f.elements.name.value,email:f.email.value,phone:f.phone.value,visit_date:D.value,visit_time:T.value,companion_count:+N.value,marketing_consent:f.line.checked,privacy_consent:f.privacy.checked,website:f.website.value};
