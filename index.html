@@ -10,35 +10,34 @@
 <link rel="stylesheet" href="style.css">
 <script src="config.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
 <script src="script.js" defer></script></head>
 <body>
-<header id="hd"><a class="logo" href="#top" aria-label="GALLERY DOT"><img src="images/logo.webp" alt="GALLERY DOT" width="120" height="30"></a>
-<nav id="nav" aria-label="メイン"><a href="#artists">作品</a><a href="#gift">来場特典</a><a href="#access">アクセス</a><a href="#faq">FAQ</a><a class="btn btn-p sm" href="#reserve" data-cta="header">来場予約</a></nav>
-<button id="burger" aria-expanded="false" aria-controls="nav" aria-label="メニュー"><i></i><i></i></button></header>
-
 <main id="top">
-<section class="hero" id="hero"><div class="ghosts" aria-hidden="true"><img class="g g1" src="images/hanna.webp" alt="" data-s="-.08"><img class="g g2" src="images/hanna.webp" alt="" data-s=".05"><img class="g g3" src="images/hanna.webp" alt="" data-s=".12"></div><i class="beam" aria-hidden="true"></i>
-<div class="hero-in"><h1 class="title"><span>AFTER</span><span>IMAGE</span></h1><p class="jp">10年の残像。</p>
+<section class="hero" id="hero"><div class="ghosts" aria-hidden="true"><div class="hero-artwork hero-artwork--1" data-s="-.035"><img src="images/hanna.webp" alt=""></div><div class="hero-artwork hero-artwork--2" data-s=".025"><img src="images/Orihara%20-%20hero.png" alt=""></div><div class="hero-artwork hero-artwork--2" data-s=".025"><img src="images/Orihara%20-%20hero2.png" alt=""></div><div class="hero-artwork hero-artwork--3" data-s="-.02"><img src="images/nori.webp" alt=""></div><div class="hero-artwork hero-artwork--4" data-s=".03"><img src="images/saeki.webp" alt=""></div><div class="hero-artwork hero-artwork--5" data-s="-.025"><img src="images/sakai.webp" alt=""></div></div><i class="beam" aria-hidden="true"></i>
+<svg class="lightning" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g class="bolt bolt-a"><path pathLength="1" d="M-40 170 104 203 165 147 232 242 309 193 372 299 455 258 519 365 602 319 674 427 752 382 820 497 914 454 981 565 1070 520 1138 642 1220 601 1292 712 1470 665"/><path pathLength="1" d="M232 242 192 326 246 386 205 477M372 299 332 374 385 448M602 319 643 240 607 165M820 497 772 577 816 662 764 751M981 565 1032 470 1007 385M1220 601 1274 523 1248 450"/></g><g class="bolt bolt-b"><path pathLength="1" d="M80 760 188 694 244 733 327 622 408 663 476 557 559 600 624 492 711 540 776 434 861 472 933 361 1010 402 1086 287 1164 333 1238 214 1324 260 1420 125"/><path pathLength="1" d="M327 622 286 542 323 480M559 600 520 681 553 748M861 472 827 557 875 627M1086 287 1046 205 1080 130M1238 214 1280 302 1350 326"/></g><g class="bolt bolt-c"><path pathLength="1" d="M-30 476 105 438 165 492 237 397 317 433 391 341 474 374 548 280 635 317 708 220 793 257 870 157 953 196 1028 101 1116 146 1190 56 1282 98 1377 8"/><path pathLength="1" d="M391 341 359 265 397 196M708 220 675 292 710 350M953 196 920 273 959 332M1190 56 1222 137 1286 166"/></g></svg>
+<div class="hero-in"><h1 class="title"><span class="title-word" data-echo="AFTER"><span class="title-face">AFTER</span></span><span class="title-word" data-echo="IMAGE"><span class="title-face">IMAGE</span></span></h1><p class="jp">10年の残像。</p>
 <p class="lead">GALLERY DOT 10周年。事前予約で来場された方に、記念マグをプレゼント。</p>
 <p class="date"><b>2026.10.10 — 10.26</b><small>12:00–19:00｜火曜休廊（10/13・10/20）</small></p>
 <a class="btn btn-p" href="#reserve" data-cta="hero">来場予約する <span>→</span></a>
-<a class="btn btn-s" data-link="LINE_URL" href="#">LINEで展示情報を受け取る</a>
+<a class="btn btn-s" data-link="LINE_URL" href="#"><svg class="line-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.63 1.42 4.99 3.67 6.43-.14 1.2-.54 2.28-1.18 3.23-.2.3.08.68.43.54 1.43-.58 2.66-1.34 3.65-2.2.99.26 2.03.4 3.11.4 5.52 0 10-3.85 10-8.4S17.52 2 12 2Z"/><text x="12" y="12.4" text-anchor="middle">LINE</text></svg>LINEで展示情報を受け取る</a>
 <p class="note">事前予約＋当日QRチェックインで記念マグをプレゼント。各日先着40点・なくなり次第終了</p></div></section>
 
-<div class="info"><dl><div><dt>会期</dt><dd>10/10（土）–10/26（月）</dd></div><div><dt>開場</dt><dd>12:00–19:00</dd></div><div><dt>休廊</dt><dd>10/13・10/20（火）</dd></div><div><dt>入場料</dt><dd id="fee">入場無料（暫定）</dd></div><div><dt>会場</dt><dd><a href="#access">神宮前 DOT BLDG 1F</a></dd></div></dl></div>
+<div class="info"><dl><div><dt>会期</dt><dd>10/10（土）–10/26（月）</dd></div><div><dt>開場</dt><dd>12:00–19:00</dd></div><div><dt>休廊</dt><dd>10/13・10/20（火）</dd></div><div><dt>入場料</dt><dd id="fee">入場無料</dd></div><div><dt>会場</dt><dd><a href="#access">神宮前 DOT BLDG 1F</a></dd></div></dl></div>
 
-<section id="concept" class="split"><p class="en rv">01 — CONCEPT</p><h2 class="rv big">AFTER IMAGE</h2>
-<div class="rv"><p class="sub">光が去ったあとに、何が残るのか。</p><p>光が去ったあとに浮かぶ像のように、創作の時差を見つめる展覧会。10年で出会った作家たちの新作・未公開作を中心に、記憶と物質が交わる瞬間を展示します。</p><p>現代アートに詳しくなくても大丈夫。「なんだか好き」から、ゆっくり見てください。</p></div></section>
+<section id="concept" class="split"><div class="pc-column"><p class="en rv">01 — CONCEPT</p><h2 class="rv big">AFTER IMAGE</h2>
+<div class="rv"><p class="sub">光が去ったあとに、何が残るのか。</p><p>光が去ったあとに浮かぶ像のように、創作の時差を見つめる展覧会。10年で出会った作家たちの新作・未公開作を中心に、記憶と物質が交わる瞬間を展示します。</p><p>現代アートに詳しくなくても大丈夫。「なんだか好き」から、ゆっくり見てください。</p></div></div></section>
 
-<section id="artists"><p class="en rv">02 — ARTISTS</p><h2 class="rv">参加アーティスト</h2><p class="rv">記憶と物質が交わる瞬間を描く、5名の作家による新作・未公開作。</p>
-<div class="car"><div class="track" id="track" tabindex="0" aria-label="作品（横にスワイプ）">
-<figure class="slide"><div class="crop"><img src="images/orihara.webp" alt="折原柚衣《Afterglow #07》" loading="lazy"></div><figcaption><b>折原 柚衣 <small>Yui Orihara</small></b>《Afterglow #07》2026</figcaption></figure>
-<figure class="slide"><div class="crop c2"><img src="images/orihara.webp" alt="折原柚衣《Blind Spot》" loading="lazy"></div><figcaption><b>折原 柚衣 <small>Yui Orihara</small></b>《Blind Spot》2024</figcaption></figure>
-<figure class="slide"><div class="ph"><img src="images/nori.webp" alt="NORI《Echo Pendulum》" loading="lazy"></div><figcaption><b>NORI <small>野里 直</small></b>《Echo Pendulum》2025</figcaption></figure>
-<figure class="slide"><div class="ph"><img src="images/saeki.webp" alt="佐伯凛《weave_ghost 3》" loading="lazy"></div><figcaption><b>佐伯 凛</b>《weave_ghost 3》2026</figcaption></figure>
-<figure class="slide"><div class="ph"><img src="images/hanna.webp" alt="Hanna K.《Residual Bodies》" loading="lazy" style="object-position:50% 45%"></div><figcaption><b>Hanna K.</b>《Residual Bodies》2023</figcaption></figure>
-<figure class="slide"><div class="ph"><img src="images/sakai.webp" alt="境直斗《After Silence》" loading="lazy"></div><figcaption><b>境 直斗</b>《After Silence》2026</figcaption></figure></div>
-<div class="ctl"><button id="prev" aria-label="前の作品">←</button><span id="pg" aria-live="polite">1 / 6</span><button id="next" aria-label="次の作品">→</button></div></div></section>
+<section id="artists" class="artists-section"><div class="pc-column"><p class="en rv">02 — ARTISTS</p><h2 class="rv">参加アーティスト</h2><p class="rv">記憶と物質が交わる瞬間を描く、5名の作家による新作・未公開作。</p></div>
+<div class="artworks" id="artworks-track" tabindex="0" aria-label="参加アーティストの作品。左右キーで移動">
+<figure class="artwork artwork--1"><button class="artwork-trigger" type="button" data-artist="折原 柚衣" data-work="《Afterglow #07》" data-year="2026" data-crop="left" aria-haspopup="dialog" aria-controls="artwork-dialog" aria-label="折原 柚衣《Afterglow #07》2026年。作品詳細を表示"><span class="artwork-frame"><img class="artwork-image artwork-image--diptych-left" src="images/orihara.webp" alt="折原柚衣《Afterglow #07》" loading="lazy"><span class="artwork-caption"><span>折原 柚衣</span><span>《Afterglow #07》</span><span>2026</span></span></span></button></figure>
+<figure class="artwork artwork--2"><button class="artwork-trigger" type="button" data-artist="折原 柚衣" data-work="《Blind Spot》" data-year="2024" data-crop="right" aria-haspopup="dialog" aria-controls="artwork-dialog" aria-label="折原 柚衣《Blind Spot》2024年。作品詳細を表示"><span class="artwork-frame"><img class="artwork-image artwork-image--diptych-right" src="images/orihara.webp" alt="折原柚衣《Blind Spot》" loading="lazy"><span class="artwork-caption"><span>折原 柚衣</span><span>《Blind Spot》</span><span>2024</span></span></span></button></figure>
+<figure class="artwork artwork--3"><button class="artwork-trigger" type="button" data-artist="NORI（野里 直）" data-work="《Echo Pendulum》" data-year="2025" aria-haspopup="dialog" aria-controls="artwork-dialog" aria-label="NORI《Echo Pendulum》2025年。作品詳細を表示"><span class="artwork-frame"><img class="artwork-image" src="images/nori.webp" alt="NORI《Echo Pendulum》" loading="lazy"><span class="artwork-caption"><span>NORI</span><span>《Echo Pendulum》</span><span>2025</span></span></span></button></figure>
+<figure class="artwork artwork--4"><button class="artwork-trigger" type="button" data-artist="佐伯 凛" data-work="《weave_ghost 3》" data-year="2026" aria-haspopup="dialog" aria-controls="artwork-dialog" aria-label="佐伯 凛《weave_ghost 3》2026年。作品詳細を表示"><span class="artwork-frame"><img class="artwork-image" src="images/saeki.webp" alt="佐伯凛《weave_ghost 3》" loading="lazy"><span class="artwork-caption"><span>佐伯 凛</span><span>《weave_ghost 3》</span><span>2026</span></span></span></button></figure>
+<figure class="artwork artwork--5"><button class="artwork-trigger" type="button" data-artist="Hanna K." data-work="《Residual Bodies》" data-year="2023" aria-haspopup="dialog" aria-controls="artwork-dialog" aria-label="Hanna K.《Residual Bodies》2023年。作品詳細を表示"><span class="artwork-frame"><img class="artwork-image" src="images/hanna.webp" alt="Hanna K.《Residual Bodies》" loading="lazy" style="object-position:50% 45%"><span class="artwork-caption"><span>Hanna K.</span><span>《Residual Bodies》</span><span>2023</span></span></span></button></figure>
+<figure class="artwork artwork--6"><button class="artwork-trigger" type="button" data-artist="境 直斗" data-work="《After Silence》" data-year="2026" aria-haspopup="dialog" aria-controls="artwork-dialog" aria-label="境 直斗《After Silence》2026年。作品詳細を表示"><span class="artwork-frame"><img class="artwork-image" src="images/sakai.webp" alt="境直斗《After Silence》" loading="lazy"><span class="artwork-caption"><span>境 直斗</span><span>《After Silence》</span><span>2026</span></span></span></button></figure>
+</div><div class="artwork-controls" aria-label="作品一覧の操作"><button id="artwork-prev" type="button" aria-label="前の作品">←</button><span id="artwork-position" aria-live="polite">01 / 06</span><button id="artwork-next" type="button" aria-label="次の作品">→</button></div></section>
 
 <section id="gift" class="split"><div class="rv"><img src="images/cup.webp" alt="GALLERY DOT 10周年記念マグカップ（黒・白）" loading="lazy" class="cup"></div>
 <div class="rv"><p class="en">03 — GIFT</p><h2>A LITTLE AFTERIMAGE,<br>TO TAKE HOME.</h2><p class="sub">10周年記念マグカップをプレゼント</p>
@@ -46,54 +45,56 @@
 <ul class="cond"><li>LPからの事前予約＋来場当日のQRチェックインが必要です</li><li>各日先着40点。なくなり次第終了</li><li>予約者本人のみ、お一人様1点（同伴者は対象外）</li><li>引換は来場当日のみ</li><li>カラーをお選びいただけない場合があります</li></ul>
 <a class="btn btn-p" href="#reserve" data-cta="gift">来場予約する <span>→</span></a></div></section>
 
-<section id="events"><p class="en rv">04 — EVENTS</p><h2 class="rv">トーク・ライブパフォーマンス</h2><p class="rv"><b class="tag">開催日時調整中（仮日程）</b> 正式決定後にご案内します。現時点でイベント参加予約は受け付けていません。</p>
-<ul class="ev rv"><li><time>10/11 SUN 17:00–18:15</time>AFTER IMAGE と、10年のキュレーション</li><li><time>10/17 SAT 18:00–19:00</time>記憶・物質・イメージの残り方</li><li><time>10/18 SUN 18:30–19:10</time>AFTER IMAGE / Light Trace</li><li><time>10/24 SAT 16:00–17:00</time>若手作家が語る AFTER IMAGE</li><li><time>10/25 SUN 17:30–18:00</time>Archive Body</li></ul></section>
+<section id="events"><div class="pc-column"><p class="en rv">04 — EVENTS</p><h2 class="rv">トーク・ライブパフォーマンス</h2><p class="rv"><b class="tag">開催日時調整中（仮日程）</b> 正式決定後にご案内します。現時点でイベント参加予約は受け付けていません。</p>
+<ul class="ev rv"><li><time>10/11 SUN 17:00–18:15</time>AFTER IMAGE と、10年のキュレーション</li><li><time>10/17 SAT 18:00–19:00</time>記憶・物質・イメージの残り方</li><li><time>10/18 SUN 18:30–19:10</time>AFTER IMAGE / Light Trace</li><li><time>10/24 SAT 16:00–17:00</time>若手作家が語る AFTER IMAGE</li><li><time>10/25 SUN 17:30–18:00</time>Archive Body</li></ul></div></section>
 
 <section id="access" class="split"><div class="rv"><img src="images/gallery.webp" alt="GALLERY DOTの展示室と外観" loading="lazy" class="cup"></div>
 <div class="rv"><p class="en">05 — ACCESS</p><h2>会場・アクセス</h2>
-<p><b>GALLERY DOT</b><br>〒150-0001 東京都渋谷区神宮前1-2-3 DOT BLDG 1F<br>12:00–19:00｜休廊 10/13・10/20｜入場料 <span class="fee2">無料（暫定）</span><br>最寄り駅：原宿駅・明治神宮前駅（徒歩分数は確認中）</p>
+<p><b>GALLERY DOT</b><br>〒150-0001 東京都渋谷区神宮前1-2-3 DOT BLDG 1F<br>12:00–19:00｜休廊 10/13・10/20｜入場料 <span class="fee2">入場無料</span><br>最寄り駅：原宿駅・明治神宮前駅（徒歩分数は確認中）</p>
 <a class="btn btn-s" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E7%A5%9E%E5%AE%AE%E5%89%8D1-2-3+GALLERY+DOT">Googleマップで見る</a>
 <h3>バリアフリー</h3><p class="sm">ワンフロア／車椅子・ベビーカー来場可／多目的トイレ／ベンチ／補助犬同伴可。点滅・暗所を伴う演出があります。車椅子・ベビーカーの貸出はありません。</p>
 <h3>撮影ルール</h3><p class="sm">静止画は撮影可（一部作品を除く）。フラッシュ・動画・三脚・自撮り棒は禁止。作品から50cm以上離れてください。商用利用・無断転載不可。</p>
 <a class="btn btn-p" href="#reserve" data-cta="access">来場予約する <span>→</span></a></div></section>
 
-<section id="history"><p class="en rv">06 — HISTORY</p><h2 class="rv">ギャラリーの歩み</h2>
+<section id="history"><div class="pc-column"><p class="en rv">06 — HISTORY</p><h2 class="rv">ギャラリーの歩み</h2>
 <ol class="tl rv" id="tl"><li><b>2016</b>ギャラリー設立</li><li><b>2017</b>若手作家支援プログラム</li><li hidden><b>2018</b>アワード選出</li><li hidden><b>2019</b>海外アートフェア参加</li><li hidden><b>2020</b>オンラインビューイング</li><li hidden><b>2021</b>Shadow Index</li><li hidden><b>2022</b>新潟レジデンス</li><li hidden><b>2023</b>写真・彫刻展</li><li hidden><b>2024</b>法人向けキュレーション企画</li><li hidden><b>2026</b>10周年記念展</li></ol>
-<button class="btn btn-s" id="more" aria-expanded="false">10年の歩みをすべて見る</button></section>
+<button class="btn btn-s" id="more" aria-expanded="false">10年の歩みをすべて見る</button></div></section>
 
-<section id="faq"><p class="en rv">07 — FAQ</p><h2 class="rv">よくあるご質問</h2><div class="rv">
-<details open><summary>入場料金はいくらですか？</summary><p>現在の想定は無料です（暫定。確定次第更新します）。</p></details>
+<section id="faq"><div class="pc-column"><p class="en rv">07 — FAQ</p><h2 class="rv">よくあるご質問</h2><div class="rv">
+<details open><summary>入場料金はいくらですか？</summary><p>入場無料です。</p></details>
 <details open><summary>現代アートに詳しくなくても楽しめますか？</summary><p>はい。知識は不要で、気になった作品の前で足を止めるだけで大丈夫です。</p></details>
 <details><summary>予約の変更・キャンセルはできますか？</summary><p>前日18:00まで可能です。予約確認メールの案内に従ってください。</p></details>
 <details><summary>予約なしでも入場できますか？</summary><p>可能な場合がありますが、混雑時は予約優先・入場制限があります。予約なしの来場はマグカップ特典の対象外です。</p></details>
-<details><summary>同伴者もマグカップをもらえますか？</summary><p>いいえ。特典は予約者本人のみ、1点です。</p></details>
+<details><summary>同伴者もマグカップをもらえますか？</summary><p>いいえ。特典は予約者本人のみ、1点です。予約1件につき同伴者は2名まで（予約者と合計3名まで）です。</p></details>
 <details><summary>写真撮影はできますか？</summary><p>静止画は可（一部作品を除く）。フラッシュ・動画・三脚・自撮り棒は禁止です。</p></details>
 <details><summary>子どもと一緒に来場できますか？</summary><p>可能です。未就学児は手をつなぐなど安全へのご配慮をお願いします。</p></details>
 <details><summary>再入場はできますか？</summary><p>当日中は受付でスタンプをご提示いただくと再入場できます。</p></details>
 <details><summary>QRコードを表示できない場合は？</summary><p>予約番号とお名前を受付でお伝えください。事前に画面保存・スクリーンショットをおすすめします。</p></details>
-<details><summary>マグカップは必ずもらえますか？</summary><p>各日先着40点のため、なくなり次第終了です。色は選べない場合があります。</p></details></div></section>
+<details><summary>マグカップは必ずもらえますか？</summary><p>各日先着40点のため、なくなり次第終了です。色は選べない場合があります。</p></details></div></div></section>
 
 <section id="final" class="final"><i class="beam" aria-hidden="true"></i><div class="rv"><h2 class="title"><span>AFTER</span><span>IMAGE</span></h2><p class="jp">10年の残像。</p><p class="date"><b>2026.10.10 — 10.26</b><small>12:00–19:00｜火曜休廊</small></p>
-<a class="btn btn-p" href="#reserve" data-cta="final">来場予約する <span>→</span></a><a class="btn btn-s" data-link="LINE_URL" href="#">LINEで展示情報を受け取る</a></div></section>
+<a class="btn btn-p" href="#reserve" data-cta="final">来場予約する <span>→</span></a><a class="btn btn-s" data-link="LINE_URL" href="#"><svg class="line-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.63 1.42 4.99 3.67 6.43-.14 1.2-.54 2.28-1.18 3.23-.2.3.08.68.43.54 1.43-.58 2.66-1.34 3.65-2.2.99.26 2.03.4 3.11.4 5.52 0 10-3.85 10-8.4S17.52 2 12 2Z"/><text x="12" y="12.4" text-anchor="middle">LINE</text></svg>LINEで展示情報を受け取る</a></div></section>
 
-<section id="reserve"><p class="en">08 — RESERVE</p><h2>来場予約</h2>
+<section id="reserve"><div class="pc-column"><p class="en">08 — RESERVE</p><h2>来場予約</h2>
 <p id="demo" class="demo" hidden>デモモード：予約サーバー未接続のため、送信しても予約は確定しません。</p>
 <form id="rform" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-<label>氏名<em>必須</em><input name="name" autocomplete="name" required><small class="err"></small></label>
-<label>メールアドレス<em>必須</em><input name="email" type="email" autocomplete="email" required><small class="err"></small></label>
-<label>電話番号<em>必須</em><input name="phone" type="tel" inputmode="tel" autocomplete="tel" required><small class="hint">当日の運営上のご連絡に使用します。</small><small class="err"></small></label>
-<label>来場日<em>必須</em><select name="date" id="date" required></select><small class="err"></small></label>
-<label>来場時間（30分枠）<em>必須</em><select name="time" id="time" required></select><small class="err"></small></label>
-<label>同伴人数<select name="comp" id="comp"></select><small class="hint">同伴者はマグカップ特典の対象外です。</small><small class="err"></small></label>
+<label><span class="field-title">氏名<em>必須</em></span><input name="name" autocomplete="name" required><small class="err"></small></label>
+<label><span class="field-title">メールアドレス<em>必須</em></span><input name="email" type="email" autocomplete="email" required><small class="err"></small></label>
+<label><span class="field-title">電話番号<em>必須</em></span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" required><small class="hint">当日の運営上のご連絡に使用します。</small><small class="err"></small></label>
+<label><span class="field-title">来場日<em>必須</em></span><select name="date" id="date" required></select><small class="err"></small></label>
+<label><span class="field-title">来場時間（30分枠）<em>必須</em></span><select name="time" id="time" required></select><small class="err"></small></label>
+<label><span class="field-title">同伴人数</span><select name="comp" id="comp"></select><small class="hint">同伴者は2名まで（予約者と合計3名まで）。同伴者はマグカップ特典の対象外です。</small><small class="err"></small></label>
 <label class="chk"><input type="checkbox" name="line"> LINEで最新情報を受け取る（任意）</label>
 <details class="pv"><summary>個人情報の取り扱い（要約）</summary><p>予約・運営・ご連絡の目的にのみ使用し、会期終了後90日で削除します（法令による場合を除く）。全文PDFは準備中です。</p></details>
 <label class="chk"><input type="checkbox" name="privacy" required> 利用規約・個人情報の取り扱いに同意する<em>必須</em><small class="err"></small></label>
 <button class="btn btn-p" id="sub" type="submit">予約を確定する <span>→</span></button><p class="msg" id="msg" role="alert"></p></form>
 
 <div id="done" hidden><h3>ご予約ありがとうございます</h3><p id="dmeta"></p><div id="qr"></div><p class="sm">このQRをスクリーンショットで保存してください。確認メールもお送りしました。変更・キャンセルは前日18:00までに、予約番号を添えて info@gallery-dot.jp へ。</p>
-<div class="share"><button class="btn btn-s" id="shr">友人に共有</button><a class="btn btn-s" data-link="LINE_URL" href="#">LINEで最新情報を受け取る</a></div></div></section>
+<div class="line-reminder"><p><b>LINE公式アカウントも友だち追加</b></p><p class="sm">展示やイベントの最新情報をLINEでお届けします。</p><a class="btn btn-s" data-link="LINE_URL" href="#"><svg class="line-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.63 1.42 4.99 3.67 6.43-.14 1.2-.54 2.28-1.18 3.23-.2.3.08.68.43.54 1.43-.58 2.66-1.34 3.65-2.2.99.26 2.03.4 3.11.4 5.52 0 10-3.85 10-8.4S17.52 2 12 2Z"/><text x="12" y="12.4" text-anchor="middle">LINE</text></svg>LINEで友だち追加</a></div>
+<div class="share"><button class="btn btn-s" id="shr">友人に共有</button></div></div></div></section>
 </main>
-<footer><p>© GALLERY DOT</p><p><a data-link="INSTAGRAM_URL" href="#">Instagram</a> / <a data-link="X_URL" href="#">X</a></p></footer>
+<dialog id="artwork-dialog" class="artwork-dialog" aria-labelledby="artwork-detail-title"><div class="artwork-detail"><button class="artwork-detail-close" type="button" aria-label="作品詳細を閉じる">×</button><button class="artwork-detail-nav artwork-detail-prev" type="button" aria-label="前の作品">←</button><figure class="artwork-detail-figure"><div class="artwork-detail-image-wrap" id="artwork-detail-image-wrap"><img id="artwork-detail-image" src="" alt=""></div><figcaption><p id="artwork-detail-artist"></p><h2 id="artwork-detail-title"></h2><p id="artwork-detail-year"></p></figcaption></figure><button class="artwork-detail-nav artwork-detail-next" type="button" aria-label="次の作品">→</button></div></dialog>
+<footer><p>© GALLERY DOT</p><nav class="socials" aria-label="SNS"><a data-link="INSTAGRAM_URL" href="#" aria-label="Instagram"><svg class="social-mark instagram" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1"/></svg></a><a data-link="X_URL" href="#" aria-label="X"><svg class="social-mark x-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22H17l-4.9-7.4L5.7 22H2.5l7.3-8.4L1.1 2h6.3l4.4 6.9zm-1.1 18h1.7L6.6 3.9H4.8z"/></svg></a></nav></footer>
 <a id="stk" class="btn btn-p" href="#reserve" data-cta="sticky">来場予約する <span>→</span></a>
 <div id="toast" role="status" aria-live="polite"></div>
 </body></html>

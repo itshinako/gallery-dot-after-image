@@ -30,7 +30,7 @@ function reserve_(b){const p=P_();
   if(!/^[0-9+\-() ]{9,20}$/.test(phone))return err_('phone','電話番号を入力してください。');
   if(!dateOk_(date,p))return err_('date','この日は予約できません。');
   if(!timeOk_(time,p))return err_('time','来場時間を選択してください。');
-  if(!Number.isInteger(comp)||comp<0||comp>(+p.MAX_COMPANIONS||0))return err_('comp','同伴人数を確認してください。');
+  if(!Number.isInteger(comp)||comp<0||comp>Math.min(+p.MAX_COMPANIONS||0,2))return err_('comp','同伴者は2名までです。');
   if(b.privacy_consent!==true)return err_('privacy','利用規約への同意が必要です。');
   const lock=LockService.getScriptLock();if(!lock.tryLock(20000))return err_('','混み合っています。しばらくして再度お試しください。');
   try{let used=0;
